@@ -32,7 +32,7 @@ access_key_id = "YOUR_ACCESS_KEY"
 secret_access_key = "YOUR_SECRET_KEY"
 root = "/images"
 base_url = "https://cdn.example.com"
-filename_format = "{date}/{stem}.{ext}"
+filename_format = "{date}/{name}"
 
 [profiles.backup]
 type = "gcs"
@@ -59,6 +59,10 @@ base_url = "https://storage.googleapis.com/backup-bucket"
 - `{stem}` - Original filename without extension
 - `{ext}` - File extension
 - `{date}` - Current date (YYYYMMDD)
+- `{year}` - Current year (YYYY)
+- `{month}` - Current month (MM)
+- `{day}` - Current day (DD)
+- `{uuid}` - UUIDv7 string
 
 ## Usage
 
@@ -98,6 +102,10 @@ pic-od profile backup
 3. Set command to: `pic-od upload`
 
 Now when you insert an image, Typora will use `pic-od` to upload it and insert the URL.
+
+### VSCode
+
+Install the [Pic OpenDAL](https://marketplace.visualstudio.com/items?itemName=frostming.pic-od-vsc) extension from the VSCode marketplace.
 
 ## License
 

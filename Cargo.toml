@@ -37,3 +37,4 @@ opendal = { version = "0.55", features = [
 serde = { version = "1", features = ["derive"] }
 tokio = { version = "1", features = ["rt-multi-thread", "macros", "fs"] }
 toml = "0.8"
+uuid = { version = "1", features = ["v7"] }

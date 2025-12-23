@@ -32,7 +32,7 @@ access_key_id = "YOUR_ACCESS_KEY"
 secret_access_key = "YOUR_SECRET_KEY"
 root = "/images"
 base_url = "https://cdn.example.com"
-filename_format = "{date}/{stem}.{ext}"
+filename_format = "{date}/{name}"
 
 [profiles.backup]
 type = "gcs"
@@ -59,6 +59,10 @@ base_url = "https://storage.googleapis.com/backup-bucket"
 - `{stem}` - 原文件名（不含扩展名）
 - `{ext}` - 文件扩展名
 - `{date}` - 当前日期（YYYYMMDD）
+- `{year}` - 当前年份（YYYY）
+- `{month}` - 当前月份（MM）
+- `{day}` - 当前日期（DD）
+- `{uuid}` - UUIDv7 字符串
 
 ## 使用方法
 
@@ -98,6 +102,10 @@ pic-od profile backup
 3. 命令设置为：`pic-od upload`
 
 现在插入图片时，Typora 会自动使用 `pic-od` 上传并插入 URL。
+
+### VSCode
+
+从 VSCode 扩展市场安装 [Pic OpenDAL](https://marketplace.visualstudio.com/items?itemName=frostming.pic-od-vsc) 扩展。
 
 ## 许可证
 
